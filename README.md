@@ -1,11 +1,23 @@
-# Conan Example
+# An C++ project structure example 
 
-> C++ Dependency Management
+> including a .vimspector configuration for neovim users. 
+
+## Requirements
+
+This projects requires the following:
+- clang
+- [pipenv](https://pypi.org/project/pipenv/) (optional, it is used for the `conan` CLI tool.)
 
 ## Build
 
-If you've never used conan before, install it with your favorite package
-manager, and run the following:
+First install `conan` via `pipenv` (or your preferred way):
+
+```bash
+pipenv install
+pipenv shell  # adds conan to PATH
+```
+
+Create a new conan profile:  TODO
 
 ``` bash
 $ conan profile new default --detect
