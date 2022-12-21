@@ -2,20 +2,21 @@ name: Makefile CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "*" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "*" ]
+
 
 jobs:
-  build:
 
+  setup:
     runs-on: ubuntu-latest
+    name: build
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v3
+      - run: bash -x ./ci/build.sh
+      - run: make test
 
-    - name: Install dependencies
-      run: make
-
-    - name: Run check
-      run: make check
